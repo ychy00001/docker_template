@@ -1,0 +1,107 @@
+2020/03/12 11:13:40 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/conf.d/default.conf:17
+2020/03/12 11:17:32 [error] 6#6: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost"
+2020/03/12 11:23:16 [error] 6#6: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost"
+2020/03/16 02:02:39 [error] 6#6: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost"
+2020/03/16 02:15:48 [crit] 6#6: *1 connect() to unix:/var/run/php71-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php71-fpm.sock:", host: "localhost"
+2020/03/16 02:15:50 [crit] 6#6: *1 connect() to unix:/var/run/php71-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php71-fpm.sock:", host: "localhost"
+2020/03/16 02:15:52 [crit] 6#6: *1 connect() to unix:/var/run/php71-fpm.sock failed (2: No such file or directory) while connecting to upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php71-fpm.sock:", host: "localhost"
+2020/03/16 02:26:17 [error] 6#6: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  require(/application/www/Laputa/bootstrap/../vendor/autoload.php): failed to open stream: No such file or directory in /application/www/Laputa/bootstrap/autoload.php on line 40
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /application/www/Laputa/public/index.php:0
+PHP message: PHP   2. require() /application/www/Laputa/public/index.php:21
+PHP message: PHP Fatal error:  require(): Failed opening required '/application/www/Laputa/bootstrap/../vendor/autoload.php' (include_path='.:/usr/share/php') in /application/www/Laputa/bootstrap/autoload.php on line 40
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /application/www/Laputa/public/index.php:0
+PHP message: PHP   2. require() /application/www/Laputa/public/index.php:21" while reading response header from upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock:", host: "localhost"
+2020/03/16 02:38:01 [error] 6#6: *3 FastCGI sent in stderr: "PHP message: PHP Warning:  require(/application/www/Laputa/bootstrap/../vendor/autoload.php): failed to open stream: No such file or directory in /application/www/Laputa/bootstrap/autoload.php on line 40
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /application/www/Laputa/public/index.php:0
+PHP message: PHP   2. require() /application/www/Laputa/public/index.php:21
+PHP message: PHP Fatal error:  require(): Failed opening required '/application/www/Laputa/bootstrap/../vendor/autoload.php' (include_path='.:/usr/share/php') in /application/www/Laputa/bootstrap/autoload.php on line 40
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /application/www/Laputa/public/index.php:0
+PHP message: PHP   2. require() /application/www/Laputa/public/index.php:21" while reading response header from upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock:", host: "192.168.223.94"
+2020/03/16 07:53:11 [error] 6#6: *10 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /application/www/Laputa/app/Libs/Foundation/Routing/ControllerInspector.php on line 67
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /application/www/Laputa/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /application/www/Laputa/public/index.php:54
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Foundation\Http\Kernel->bootstrap() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:146
+PHP message: PHP   5. Illuminate\Foundation\Application->bootstrapWith() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:162
+PHP message: PHP   6. Illuminate\Foundation\Bootstrap\BootProviders->bootstrap() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:208
+PHP message: PHP   7. Illuminate\Foundation\Application->boot() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php:17
+PHP message: PHP   8. array_walk() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:772
+PHP message: PHP   9. Illuminate\Foundation\Application->Illuminate\Foundation\{closure}() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:772
+PHP message: PHP  10. Illuminate\Foundation\Application->bootProvider() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:771
+PHP message: PHP  11. Illuminate\Container\Container->call() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:788
+PHP message: PHP  12. Illuminate\Container\BoundMethod::call() /application/www/Laputa/vendor/laravel/framew
+2020/03/16 07:55:56 [error] 6#6: *12 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: , request: "GET /admin HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock", host: "localhost"
+2020/03/16 07:56:57 [error] 6#6: *12 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 443
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /application/www/Laputa/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /application/www/Laputa/public/index.php:54
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Foundation\Http\Kernel->bootstrap() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:146
+PHP message: PHP   5. Illuminate\Foundation\Application->bootstrapWith() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:162
+PHP message: PHP   6. Illuminate\Foundation\Bootstrap\BootProviders->bootstrap() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:208
+PHP message: PHP   7. Illuminate\Foundation\Application->boot() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php:17
+PHP message: PHP   8. array_walk() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:772
+PHP message: PHP   9. Illuminate\Foundation\Application->Illuminate\Foundation\{closure}() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:772
+PHP message: PHP  10. Illuminate\Foundation\Application->bootProvider() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:771
+PHP message: PHP  11. Illuminate\Container\Container->call() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:788
+PHP message: PHP  12. Illuminate\Container\BoundMethod::call() /application/www/Laputa/vendor/larave
+2020/03/16 07:56:59 [error] 6#6: *12 FastCGI sent in stderr: "endGroupNamespace() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Routing/Router.php:424" while reading response header from upstream, client: 172.18.0.1, server: , request: "GET /admin HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock:", host: "localhost"
+2020/03/16 08:02:51 [error] 6#6: *15 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /application/www/Laputa/vendor/swiftmailer/swiftmailer/lib/classes/Swift.php on line 46
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /application/www/Laputa/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /application/www/Laputa/public/index.php:54
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Foundation\Http\Kernel->bootstrap() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:146
+PHP message: PHP   5. Illuminate\Foundation\Application->bootstrapWith() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:162
+PHP message: PHP   6. Illuminate\Foundation\Bootstrap\BootProviders->bootstrap() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:208
+PHP message: PHP   7. Illuminate\Foundation\Application->boot() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php:17
+PHP message: PHP   8. array_walk() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:772
+PHP message: PHP   9. Illuminate\Foundation\Application->Illuminate\Foundation\{closure}() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:772
+PHP message: PHP  10. Illuminate\Foundation\Application->bootProvider() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:771
+PHP message: PHP  11. Illuminate\Container\Container->call() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:788
+PHP message: PHP  12. Illuminate\Container\BoundMethod::call() /application/www/Laputa/vendor/laravel/frame
+2020/03/16 08:05:02 [error] 6#6: *17 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Routing/Router.php on line 309
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /application/www/Laputa/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /application/www/Laputa/public/index.php:54
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Foundation\Http\Kernel->bootstrap() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:146
+PHP message: PHP   5. Illuminate\Foundation\Application->bootstrapWith() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:162
+PHP message: PHP   6. Illuminate\Foundation\Bootstrap\BootProviders->bootstrap() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:208
+PHP message: PHP   7. Illuminate\Foundation\Application->boot() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php:17
+PHP message: PHP   8. array_walk() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:772
+PHP message: PHP   9. Illuminate\Foundation\Application->Illuminate\Foundation\{closure}() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:772
+PHP message: PHP  10. Illuminate\Foundation\Application->bootProvider() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:771
+PHP message: PHP  11. Illuminate\Container\Container->call() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:788
+PHP message: PHP  12. Illuminate\Container\BoundMethod::call() /application/www/Laputa/vendor/larave
+2020/03/16 08:06:51 [error] 6#6: *17 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Support/Arr.php on line 235
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /application/www/Laputa/public/index.php:0
+PHP message: PHP   2. Illuminate\Foundation\Http\Kernel->handle() /application/www/Laputa/public/index.php:54
+PHP message: PHP   3. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+PHP message: PHP   4. Illuminate\Foundation\Http\Kernel->bootstrap() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:146
+PHP message: PHP   5. Illuminate\Foundation\Application->bootstrapWith() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:162
+PHP message: PHP   6. Illuminate\Foundation\Bootstrap\BootProviders->bootstrap() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:208
+PHP message: PHP   7. Illuminate\Foundation\Application->boot() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php:17
+PHP message: PHP   8. array_walk() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:772
+PHP message: PHP   9. Illuminate\Foundation\Application->Illuminate\Foundation\{closure}() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:772
+PHP message: PHP  10. Illuminate\Foundation\Application->bootProvider() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:771
+PHP message: PHP  11. Illuminate\Container\Container->call() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:788
+PHP message: PHP  12. Illuminate\Container\BoundMethod::call() /application/www/Laputa/vendor/laravel/f
+2020/03/16 08:06:53 [error] 6#6: *17 FastCGI sent in stderr: "geWithLastGroup() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Routing/Router.php:498
+PHP message: PHP  53. Illuminate\Routing\RouteGroup::merge() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Routing/Router.php:311
+PHP message: PHP  54. Illuminate\Support\Arr::except() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Routing/RouteGroup.php:29
+PHP message: PHP  55. Illuminate\Support\Arr::forget() /application/www/Laputa/vendor/laravel/framework/src/Illuminate/Support/Arr.php:133" while reading response header from upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock:", host: "localhost"
+2020/03/16 09:17:07 [warn] 6#6: *26 an upstream response is buffered to a temporary file /var/cache/nginx/fastcgi_temp/1/00/0000000001 while reading upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock:", host: "localhost"
+2020/03/16 10:52:56 [error] 7#7: *1 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock", host: "localhost"
+2020/03/16 11:06:44 [error] 7#7: *9 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock", host: "localhost"
+2020/03/16 11:10:20 [error] 8#8: *25 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: , request: "GET /web-api/home-page/home-data?city_id=1 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php7-fpm.sock", host: "localhost", referrer: "http://localhost/"
+2020/03/20 06:09:26 [error] 7#7: *32 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php7-fpm.sock"
+2020/03/24 05:05:36 [error] 7#7: *34 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php7-fpm.sock"
+2020/04/09 02:59:47 [error] 7#7: *36 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php7-fpm.sock"
+2020/04/10 02:19:05 [error] 7#7: *38 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 172.18.0.1, server: , request: "GET / HTTP/1.0", upstream: "fastcgi://unix:/var/run/php7-fpm.sock"

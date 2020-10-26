@@ -1,0 +1,55 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: "3.1"
+services:
+
+    webserver:
+      image: nginx:alpine
+      container_name: webserver
+      working_dir: /application
+      volumes:
+          - .:/application
+          - ./phpdocker/nginx/conf.d:/etc/nginx/conf.d
+          - "phpsocket:/var/run"
+          - ./log/nginx:/var/log/nginx
+      ports:
+         - "80:80"
+      networks:
+         - code-network
+      depends_on:
+         - php-fpm
+      links:
+         - php-fpm
+
+    php-fpm:
+      build: phpdocker/php-fpm
+      container_name: php-fpm
+      working_dir: /application
+      volumes:
+        - .:/application
+        - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.0/fpm/conf.d/99-overrides.ini
+        - ./phpdocker/php-fpm/www.conf:/etc/php/7.0/fpm/pool.d/z-overrides.conf
+        - "phpsocket:/var/run"
+      networks:
+        - code-network
+      depends_on:
+        - redis
+    
+    redis:
+      image: redis:4.0.10-alpine
+      container_name: redis
+      ports:
+        - "6679:6379"
+      volumes:
+        - ./data/redis:/data   #挂载redis存储数据  宿主机目录请自行修改
+      privileged: true
+      networks:
+          - code-network
+
+networks:
+  code-network:
+    driver: bridge
+
+volumes:
+  phpsocket:

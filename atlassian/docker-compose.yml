@@ -1,0 +1,19 @@
+
+version: "3.3"
+services:
+    jira:
+      build: dockerFile/jira
+      container_name: qt-jira
+      volumes:
+        - /mnt/data/atlassian:/var/atlassian
+      ports: 
+        - "8080:8080"
+
+    confluence:
+      build: dockerFile/confluence
+      container_name: qt-confluence
+      volumes:
+        - /mnt/data/atlassian:/var/atlassian
+        - /mnt/data/atlassian/confluence_home:/home
+      ports: 
+        - "8090:8090"
