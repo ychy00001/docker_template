@@ -1,0 +1,5 @@
+# ignore es data info
+/es/elastic/data1/*
+!/es/elastic/data1
+/es/elastic/data2/*
+!/es/elastic/data2
